@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <form action="{% url 'blog_update' object.pk %}" method="post">
+        {% csrf_token %}
+        <h1>Edit Post</h1>
+        {{ form.as_p }}
+
+        <div class="form-buttons">
+            <input type="submit" value="Update" class="btn confirm">
+            <a href="{% url 'blog_detail' object.pk %}" class="btn cancel">Cancel</a>
+        </div>
+    </form>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <form action="{% url 'blog_delete' object.pk %}" method="post">
+        {% csrf_token %}
+        <h1>Delete Post</h1>
+        <p>Are you sure you want to delete "{{ post.title }}"?</p>
+
+        <div class="form-buttons">
+            <input type="submit" value="Confirm" class="btn confirm">
+            <a href="{% url 'blog' %}" class="btn cancel">Cancel</a>
+        </div>
+    </form>
+
+
+{% endblock content %}

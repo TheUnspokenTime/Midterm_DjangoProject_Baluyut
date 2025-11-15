@@ -1,7 +1,310 @@
+/* -------------------- General -------------------- */
 h1 {
     color: #4ac1f7;
+    font-family: sans-serif;
 }
+
 .mylogo {
     height: 300px;
     width: auto;
+}
+
+/* -------------------- Home Page -------------------- */
+.home-container {
+    max-width: 800px;
+    margin: 80px auto;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.home-container h1 {
+    font-size: 2.5em;
+    color: #3498db;
+    margin-bottom: 25px;
+}
+
+.home-container .mylogo {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+.home-container .home-intro {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.home-container .explore-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1.2em;
+    background-color: #e67e22; /* orange accent */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.home-container .explore-btn:hover {
+    background-color: #d35400;
+}
+
+/* -------------------- About Page -------------------- */
+.about-container {
+    max-width: 700px;
+    margin: 80px auto;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.about-container h1 {
+    font-size: 2.5em;
+    color: #4ac1f7;
+    margin-bottom: 20px;
+}
+
+.about-container .about-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+
+/* -------------------- Navbar styling -------------------- */
+header {
+    display: flex;
+    gap: 50px; /* spacing between links */
+    background-color: #2c3e50;
+    padding: 20px 40px; /* bigger navbar padding */
+    font-family: Arial, sans-serif;
+    align-items: center;
+}
+
+header a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3em;  /* bigger text */
+    display: inline-block;
+    position: relative;
+    padding: 8px 0; /* vertical padding */
+    transition: color 0.3s;
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px; /* thicker underline */
+    background-color: #f1c40f;
+    transition: width 0.3s;
+}
+
+header a:hover::after {
+    width: 100%;
+}
+
+header a:hover {
+    color: #f1c40f;
+}
+
+/* Responsive navbar */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    header a {
+        font-size: 1.2em;
+    }
+}
+
+/* -------------------- Blog posts -------------------- */
+.post-entry {
+    background-color: #ecf0f1; /* light gray */
+    border-left: 5px solid #3498db; /* blue accent line */
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.post-entry:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.post-entry h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.6em;
+    color: #2c3e50;
+}
+
+.post-entry h2 a {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: color 0.3s;
+}
+
+.post-entry h2 a:hover {
+    color: #3498db;
+}
+
+.post-entry p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #34495e;
+}
+
+.post-entry:first-of-type {
+    margin-top: 20px;
+}
+
+/* -------------------- Forms (create/update/delete) -------------------- */
+form {
+    background-color: #f8f9fa;
+    padding: 25px 30px;
+    margin: 40px auto; /* center horizontally & spacing */
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    max-width: 600px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: left; /* keep fields left-aligned */
+}
+
+form h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center; /* heading centered */
+    color: #2c3e50;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* -------------------- Form Buttons -------------------- */
+.form-buttons {
+    text-align: center; /* center the buttons */
+    margin-top: 20px;
+}
+
+.form-buttons .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Confirm (submit) button */
+.form-buttons .btn.confirm {
+    background-color: #e74c3c; /* red for delete or blue for create/update */
+    color: white;
+    border: none;
+}
+
+.form-buttons .btn.confirm:hover {
+    background-color: #c0392b;
+}
+
+/* Cancel button */
+.form-buttons .btn.cancel {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+}
+
+.form-buttons .btn.cancel:hover {
+    background-color: #7f8c8d;
+}
+
+/* -------------------- Detail page edit/delete links -------------------- */
+.detail-links {
+    text-align: center; /* center buttons */
+    margin-top: 20px;
+}
+
+.detail-links a {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.detail-links a.edit {
+    background-color: #2ecc71; /* green */
+    color: white;
+}
+
+.detail-links a.edit:hover {
+    background-color: #27ae60;
+}
+
+.detail-links a.delete {
+    background-color: #e74c3c; /* red */
+    color: white;
+}
+
+.detail-links a.delete:hover {
+    background-color: #c0392b;
+}
+
+/* -------------------- New Blog Post link -------------------- */
+.new-post-link {
+    display: inline-block;
+    margin: 40px 0 20px 0; /* lower link */
+    padding: 12px 25px; /* bigger button */
+    font-size: 1.2em; /* bigger font */
+    background-color: #3498db;
+    color: #fff; /* visible text */
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.new-post-link:hover {
+    background-color: #2980b9;
+    color: #fdfdfd;
+}
+
+.new-post-link.light-bg {
+    color: #3498db;
+    background-color: #ecf0f1;
+}
+
+.new-post-link.light-bg:hover {
+    background-color: #bdc3c7;
+    color: #2c3e50;
 }
