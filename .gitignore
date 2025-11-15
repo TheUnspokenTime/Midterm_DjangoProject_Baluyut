@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+
+# env
+env/
+venv/
+ENV/
+
+# VS Code
+.vscode/
+
+# JetBrains (PyCharm)
+.idea/
+
+# Static files (optional)
+staticfiles/
+
+# OS files
+*.log
+.DS_Store
+Thumbs.db
